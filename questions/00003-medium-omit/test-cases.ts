@@ -7,7 +7,7 @@ type cases = [
 ]
 
 // @ts-expect-error
-type error = MyOmit<Todo, 'description' | 'invalid'>
+type error = Pick<Todo, 'description' | 'invalid'>
 
 interface Todo {
   title: string
