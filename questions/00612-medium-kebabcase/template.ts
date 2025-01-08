@@ -1,1 +1,4 @@
-type KebabCase<S> = any
+type KebabCase<S extends string> =
+ S extends `${infer A}${infer B}`
+   ? B extends Uncapitalize<B> ? `${Uncapitalize<A>}${KebabCase<B>}` : `${Uncapitalize<A>}-${KebabCase<B>}`
+   : S
