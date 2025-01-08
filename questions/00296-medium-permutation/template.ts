@@ -3,4 +3,4 @@ type Permutation<T, U = T> =
   ? [] :
   U extends T
     ? [ U, ...Permutation<Exclude<T, U>>]
-    : []
+    : never
